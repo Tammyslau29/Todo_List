@@ -15,10 +15,7 @@ function todoListController($log, dbService){
     ctrl.clearList = function() {
         ctrl.todoArr.$destroy();
         ctrl.todoArr=null;
-    }
-    // ctrl.$onInit = function(){
-    //     ctrl.getList();
-    // };
+    };
     ctrl.toggleComplete = function(item){
         var completed = !item.completed;
         var now = (completed)? new Date().getTime() : null;
@@ -30,7 +27,7 @@ function todoListController($log, dbService){
    }
    ctrl.addItem = function(item){
        dbService.add(item).then(function(msg){
-           console.info(msg);
+           $log.info(msg);
        });
    }
 }

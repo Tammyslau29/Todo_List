@@ -8,13 +8,11 @@ angular.module('todoList').service('dbService', function($q, $timeout,$firebaseA
     };
     firebase.initializeApp(config);
     var dbs = this;
-    dbs.userId = null;
     dbs.auth = $firebaseAuth();
     dbs.createUser = function(email, password){
         var defer = $q.defer();
         dbs.auth.$createUserWithEmailAndPassword(email,password).then(function(user){
-            var ref = firebase.database()
-            dbs.userId = user.uid;
+            var ref = firebase.database();
             dbs.todos=$firebaseArray(ref.ref("users-todos/" + user.uid));
             defer.resolve(user);
         }).catch(function(err){
@@ -26,7 +24,6 @@ angular.module('todoList').service('dbService', function($q, $timeout,$firebaseA
     dbs.login = function(email, password){
         var defer = $q.defer();
         dbs.auth.$signInWithEmailAndPassword(email,password).then(function(user){
-            dbs.userId = user.uid;
             defer.resolve(user);
         }).catch(function(err){
             defer.reject(err);
@@ -38,7 +35,6 @@ angular.module('todoList').service('dbService', function($q, $timeout,$firebaseA
         dbs.todos = null;
         dbs.auth.$signOut().then(function(){
             defer.resolve();
-            dbs.userId=null;
         }).catch(function(err){
             defer.reject(err);
         });
