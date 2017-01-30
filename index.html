@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="todoList">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To do List | Angular</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Quicksand" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/services/db.service.js"></script>
+    <script src="js/components/app/app.component.js"></script>
+    <script src="js/components/todoList/todo-list.component.js"></script>
+    <script src="js/components/itemDetail/item-detail.component.js"></script>
+    <script src="js/components/AddForm/add-form.component.js"></script>
+    <script src="js/components/loginForm/login-form.component.js"></script>
+
+</head>
+<body>
+    <app>
+        <to-do></to-do>
+    </app>
+</body>
+</html>

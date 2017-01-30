@@ -1,0 +1,30 @@
+<div class="panel panel-default list_panel">
+    <div class="panel-heading todo-list-item">{{ $ctrl.item.title }}</div>
+    <div class="panel-body">
+        <table>
+            <tbody>
+            <tr>
+                <th>Date Added:</th>
+                <td>{{ $ctrl.item.dateAdded | date : 'mediumDate'}}</td>
+            </tr>
+            <tr>
+                <th>Task Details:</th>
+                <td>{{ $ctrl.item.description }}</td>
+            </tr>
+            <tr>
+                <th>Completed:</th>
+                <td>{{ $ctrl.item.completed }}</td>
+            </tr>
+            <tr>
+                <th>Date Completed:</th>
+                <td>{{ $ctrl.item.dateCompleted | date: 'short' }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="panel-footer">
+        <button type="button" class="btn complete_btn" ng-click="$ctrl.toggle()">{{ $ctrl.item.completed ? 'Restore' : 'Complete' }}</button>
+        <button ng-if="$ctrl.item.completed" class='btn delete_btn' ng-click="$ctrl.onDelete()">Delete</button>
+    </div>
+</div>
