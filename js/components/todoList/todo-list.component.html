@@ -1,0 +1,9 @@
+<login-form on-sign-out="$ctrl.clearList()"></login-form>
+<add-form  ng-if="$ctrl.todoArr" on-add="$ctrl.addItem(item)"></add-form>
+<div>
+    <item-detail ng-repeat="todoItem in $ctrl.todoArr"
+                 item="todoItem"
+                 on-toggle="$ctrl.toggleComplete(todoItem)"
+                 on-delete="$ctrl.itemDelete(todoItem)">
+    </item-detail>
+</div>

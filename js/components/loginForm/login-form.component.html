@@ -1,0 +1,11 @@
+<div ng-if="!$ctrl.uid" class="form-horizontal">
+    <h3 class="login_text">Login</h3>
+    <div class="form-group input-group col-md-6"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input type="text" ng-model="$ctrl.user.email" class="form-control"></div>
+    <div class="form-group input-group col-md-6"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input type="password" ng-model="$ctrl.user.password" class="form-control"></div>
+    <div class="col-md-3"><button type="button" class="btn log_in" ng-click="$ctrl.loginUser()">Log In</button></div>
+    <div class="col-md-3"><button type="button" class="btn btn-default" ng-click="$ctrl.newUser()">Create Account</button></div>
+</div>
+<p ng-if="$ctrl.failed">Username or Password Incorrect</p>
+<div>
+    <button ng-click="$ctrl.logoutUser()" ng-if="$ctrl.uid" class="btn delete_btn">Log Out</button>
+</div>

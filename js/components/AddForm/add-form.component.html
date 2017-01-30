@@ -1,0 +1,13 @@
+<form class="todo_form">
+    <div class="form-group">
+        <label for="title">List Item Title:</label>
+        <input type="text" class="form-control" id="title" ng-model="$ctrl.todoItem.title">
+    </div>
+    <div class="form-group">
+        <label for="title">Task Details:</label>
+        <input type="text" class='form-control' id="details" ng-model="$ctrl.todoItem.description">
+    </div>
+    <button type="button" class="btn complete_btn" ng-click="$ctrl.submit()">Add To List</button>
+    <button type="button" class="btn btn-default" ng-click="$ctrl.clearForm()">Clear Form</button>
+</form>
+<hr>
